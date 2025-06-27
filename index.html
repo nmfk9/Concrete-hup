@@ -1,4 +1,71 @@
-<!-- السكريبتات -->
+<h2>📚 المكتبة العلمية</h2>
+  <div class="articles">
+    <article>
+      <h3>دليل ACI 318 بالعربية</h3>
+      <p>تحميل ملف PDF لمواصفات الخرسانة المسلحة</p>
+      <a href="path/to/ACI.pdf" download>تنزيل الملف</a>
+    </article>
+    <!-- كرر المقال لكل وثيقة -->
+  </div>
+</section>
+                <li><a href="#">الأدوات</a></li>
+                <li><a href="#">الدورات</a></li>
+                <li><a href="#">اتصل بنا</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- المحتوى الرئيسي -->
+    <div class="container">
+        <!-- قسم الحاسبة -->
+        <section>
+            <div class="calculator">
+                <h2>حاسبة كميات الخرسانة</h2>
+                <label for="length">الطول (متر):</label>
+                <input type="number" id="length" placeholder="أدخل الطول">
+
+                <label for="width">العرض (متر):</label>
+                <input type="number" id="width" placeholder="أدخل العرض">
+
+                <label for="height">الارتفاع (متر):</label>
+                <input type="number" id="height" placeholder="أدخل الارتفاع">
+
+                <button onclick="calculateConcrete()">احسب الكمية</button>
+                <div id="result"></div>
+            </div>
+        </section>
+
+        <!-- أحدث المقالات -->
+        <section>
+            <h2>أحدث المقالات</h2>
+            <div class="articles">
+                <div class="article-card">
+                    <h3>تصميم الخلطات الخرسانية وفقًا لـ ACI</h3>
+                    <p>دليل عملي لتصميم خلطة خرسانية متوافقة مع مواصفات المعهد الأمريكي للخرسانة.</p>
+                    <a href="#">اقرأ المزيد →</a>
+                </div>
+                <div class="article-card">
+                    <h3>أخطاء شائعة في صب الخرسانة</h3>
+                    <p>تعرف على أكثر الأخطاء انتشارًا وكيفية تجنبها لضمان جودة التنفيذ.</p>
+                    <a href="#">اقرأ المزيد →</a>
+                </div>
+                <div class="article-card">
+                    <h3>الخرسانة الخضراء: المستقبل المستدام</h3>
+                    <p>كيف تقلل البصمة الكربونية باستخدام مواد صديقة للبيئة.</p>
+                    <a href="#">اقرأ المزيد →</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- تذييل الصفحة -->
+    <footer>
+        <div class="container">
+            <p>© 2025 Concrete Hub - جميع الحقوق محفوظة</p>
+        </div>
+    </footer>
+
+    <!-- السكريبتات -->
     <script>
         // دالة حساب كمية الخرسانة
         function calculateConcrete() {
@@ -19,36 +86,6 @@
                 <p>عدد أكياس الإسمنت (تقريبي): <strong>${cement} كيس (50 كجم/كيس)</strong></p>
             ;
         }
-
-        // دالة عرض/إخفاء تفاصيل الدورة
-        function toggleCourse(courseId) {
-            const details = document.getElementById(${courseId}-details);
-            details.style.display = details.style.display === 'none' ? 'block' : 'none';
-        }
-
-        // دالة إرسال نموذج الاتصال
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            alert('تم استلام رسالتك بنجاح! سنتواصل معك قريباً.');
-            this.reset();
-        });
-
-        // تنشيط القوائم
-        document.querySelectorAll('nav a').forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href').substring(1);
-                document.querySelectorAll('section').forEach(section => {
-                    section.style.display = 'none';
-                });
-                document.getElementById(targetId).style.display = 'block';
-            });
-        });
-
-        // عرض الصفحة الرئيسية عند التحميل
-        window.onload = function() {
-            document.getElementById('home').style.display = 'block';
-        };
     </script>
 </body>
 </html>
